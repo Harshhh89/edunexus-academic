@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EduNexus Academic | Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body class="auth-page">
+    <main class="container min-vh-100 d-flex align-items-center justify-content-center py-5">
+      <section class="auth-card row g-0 overflow-hidden">
+        <div class="col-lg-6 auth-hero p-5 text-white">
+          <p class="eyebrow mb-3">EduNexus Academic</p>
+          <h1 class="display-5 fw-bold mb-3">One school system, one communication hub.</h1>
+          <p class="lead mb-0">Connect admins, teachers, and parents with role-based access for attendance, homework, timetable, verification, and messaging.</p>
+        </div>
+        <div class="col-lg-6 bg-white p-4 p-md-5">
+          <h2 class="h3 fw-bold mb-2">Sign in</h2>
+          <p class="text-secondary mb-4">Use your school email and password.</p>
+
+          <div id="loginAlert" class="alert alert-danger d-none" role="alert"></div>
+
+          <form id="loginForm" class="vstack gap-3">
+            <div>
+              <label for="email" class="form-label">Email address</label>
+              <input id="email" name="email" type="email" class="form-control form-control-lg" placeholder="admin@edunexus.test" required>
+            </div>
+            <div>
+              <label for="password" class="form-label">Password</label>
+              <input id="password" name="password" type="password" class="form-control form-control-lg" placeholder="Password@123" required>
+            </div>
+            <button id="loginButton" class="btn btn-primary btn-lg mt-2" type="submit">Login</button>
+          </form>
+
+          <div class="demo-box mt-4">
+            <p class="fw-semibold mb-2">Demo users after running SQL seed:</p>
+            <p class="mb-1">admin@edunexus.test</p>
+            <p class="mb-1">teacher@edunexus.test</p>
+            <p class="mb-0">parent@edunexus.test</p>
+            <small class="text-secondary">Password: Password@123</small>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/js/auth.js"></script>
+  </body>
+</html>

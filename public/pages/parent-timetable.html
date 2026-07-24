@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Parent Timetable | EduNexus Academic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body data-required-role="parent">
+    <nav class="navbar navbar-expand-lg dashboard-nav">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-decoration-none" href="/pages/parent-dashboard.html">EduNexus Academic</a>
+        <div class="d-flex gap-2">
+          <a class="btn btn-outline-dark" href="/pages/parent-dashboard.html">Back to Dashboard</a>
+          <button class="btn btn-outline-dark" data-logout>Logout</button>
+        </div>
+      </div>
+    </nav>
+    <main class="container py-5">
+      <section class="dashboard-header p-4 p-md-5 mb-4">
+        <p class="eyebrow mb-2">Timetable</p>
+        <h1 class="fw-bold mb-2">Weekly class timetable</h1>
+        <p id="welcomeText" class="mb-2 text-secondary">Loading your account...</p>
+        <p class="mb-0 text-secondary">Parents only see the timetable for their linked child or children.</p>
+      </section>
+      <div id="parentTimetableAlert" class="alert d-none" role="alert"></div>
+      <div id="parentTimetableContent" class="row g-4"></div>
+    </main>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/parent-timetable.js"></script>
+  </body>
+</html>

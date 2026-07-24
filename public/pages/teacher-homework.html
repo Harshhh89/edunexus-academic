@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Teacher Homework | EduNexus Academic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body data-required-role="teacher">
+    <nav class="navbar navbar-expand-lg dashboard-nav">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-decoration-none" href="/pages/teacher-dashboard.html">EduNexus Academic</a>
+        <div class="d-flex gap-2">
+          <a class="btn btn-outline-dark" href="/pages/teacher-dashboard.html">Back to Dashboard</a>
+          <button class="btn btn-outline-dark" data-logout>Logout</button>
+        </div>
+      </div>
+    </nav>
+    <main class="container py-5">
+      <section class="dashboard-header p-4 p-md-5 mb-4">
+        <p class="eyebrow mb-2">Homework</p>
+        <h1 class="fw-bold mb-2">Assign subject-wise homework</h1>
+        <p id="welcomeText" class="mb-2 text-secondary">Loading your account...</p>
+        <p class="mb-0 text-secondary">Teachers can only assign homework for their own class, division, and subject combinations.</p>
+      </section>
+      <div id="teacherHomeworkAlert" class="alert d-none" role="alert"></div>
+      <section class="admin-section mb-4">
+        <form id="teacherHomeworkForm" class="row g-3">
+          <div class="col-md-4"><label class="form-label" for="homeworkAssignmentId">Assigned class and subject</label><select id="homeworkAssignmentId" class="form-select" required></select></div>
+          <div class="col-md-4"><label class="form-label" for="homeworkTitle">Title</label><input id="homeworkTitle" class="form-control" placeholder="Worksheet 5" required></div>
+          <div class="col-md-2"><label class="form-label" for="homeworkAssignedDate">Assigned date</label><input id="homeworkAssignedDate" type="date" class="form-control"></div>
+          <div class="col-md-2"><label class="form-label" for="homeworkDueDate">Due date</label><input id="homeworkDueDate" type="date" class="form-control" required></div>
+          <div class="col-12"><label class="form-label" for="homeworkDescription">Description</label><textarea id="homeworkDescription" class="form-control" rows="4" placeholder="Write the exact homework instructions here." required></textarea></div>
+          <div class="col-12"><button class="btn btn-primary" type="submit">Assign homework</button></div>
+        </form>
+      </section>
+      <section class="admin-section">
+        <div class="section-heading mb-3">
+          <div>
+            <p class="eyebrow mb-1">Assigned Items</p>
+            <h2 class="h4 mb-0">Recent homework</h2>
+          </div>
+        </div>
+        <div class="table-card">
+          <div class="table-responsive">
+            <table class="table align-middle mb-0">
+              <thead><tr><th>Title</th><th>Class</th><th>Subject</th><th>Assigned</th><th>Due</th><th>Actions</th></tr></thead>
+              <tbody id="teacherHomeworkTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/teacher-homework.js"></script>
+  </body>
+</html>

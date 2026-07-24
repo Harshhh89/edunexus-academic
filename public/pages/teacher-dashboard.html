@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Teacher Dashboard | EduNexus Academic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body data-required-role="teacher">
+    <nav class="navbar navbar-expand-lg dashboard-nav">
+      <div class="container">
+        <span class="navbar-brand fw-bold">EduNexus Academic</span>
+        <div class="d-flex gap-2">
+          <a class="btn btn-dark" href="/pages/teacher-attendance.html">Mark Attendance</a>
+          <a class="btn btn-outline-dark" href="/pages/teacher-homework.html">Assign Homework</a>
+          <a class="btn btn-outline-dark" href="/pages/teacher-messages.html">Messages</a>
+          <button class="btn btn-outline-dark" data-logout>Logout</button>
+        </div>
+      </div>
+    </nav>
+    <main class="container py-5">
+      <div class="dashboard-header p-4 p-md-5 mb-4">
+        <p class="eyebrow mb-2">Teacher Dashboard</p>
+        <h1 class="fw-bold mb-2">Daily classroom workspace</h1>
+        <p id="welcomeText" class="mb-0 text-secondary">Loading your account...</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <a class="text-decoration-none" href="/pages/teacher-attendance.html">
+            <div class="module-card"><h2 class="h5">Attendance</h2><p>Mark present or absent for assigned classes.</p></div>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a class="text-decoration-none" href="/pages/teacher-homework.html">
+            <div class="module-card"><h2 class="h5">Homework</h2><p>Assign subject-wise work with due dates.</p></div>
+          </a>
+        </div>
+        <div class="col-md-4">
+          <a class="text-decoration-none" href="/pages/teacher-messages.html">
+            <div class="module-card"><h2 class="h5">Messages</h2><p>Communicate with parents of your students.</p></div>
+          </a>
+        </div>
+      </div>
+    </main>
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>

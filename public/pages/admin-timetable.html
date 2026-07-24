@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Timetable | EduNexus Academic</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body data-required-role="admin">
+    <nav class="navbar navbar-expand-lg dashboard-nav">
+      <div class="container">
+        <a class="navbar-brand fw-bold text-decoration-none" href="/pages/admin-dashboard.html">EduNexus Academic</a>
+        <div class="d-flex gap-2">
+          <a class="btn btn-outline-dark" href="/pages/admin-dashboard.html">Back to Dashboard</a>
+          <button class="btn btn-outline-dark" data-logout>Logout</button>
+        </div>
+      </div>
+    </nav>
+    <main class="container py-5">
+      <section class="dashboard-header p-4 p-md-5 mb-4">
+        <p class="eyebrow mb-2">Timetable</p>
+        <h1 class="fw-bold mb-2">Build class-wise weekly timetable</h1>
+        <p id="welcomeText" class="mb-2 text-secondary">Loading your account...</p>
+        <p class="mb-0 text-secondary">Create weekly periods for each class and division so parents can view the live timetable in the app.</p>
+      </section>
+      <div id="adminTimetableAlert" class="alert d-none" role="alert"></div>
+      <section class="admin-section mb-4">
+        <form id="adminTimetableForm" class="row g-3">
+          <div class="col-md-3"><label class="form-label" for="ttAcademicYearId">Academic year</label><select id="ttAcademicYearId" class="form-select" required></select></div>
+          <div class="col-md-2"><label class="form-label" for="ttClassId">Class</label><select id="ttClassId" class="form-select" required></select></div>
+          <div class="col-md-2"><label class="form-label" for="ttDivisionId">Division</label><select id="ttDivisionId" class="form-select" required></select></div>
+          <div class="col-md-2"><label class="form-label" for="ttWeekday">Day</label><select id="ttWeekday" class="form-select" required></select></div>
+          <div class="col-md-1"><label class="form-label" for="ttPeriodNumber">Period</label><input id="ttPeriodNumber" type="number" min="1" class="form-control" required></div>
+          <div class="col-md-2"><label class="form-label" for="ttSubjectId">Subject</label><select id="ttSubjectId" class="form-select" required></select></div>
+          <div class="col-md-3"><label class="form-label" for="ttTeacherId">Teacher</label><select id="ttTeacherId" class="form-select"></select></div>
+          <div class="col-md-2"><label class="form-label" for="ttStartTime">Start</label><input id="ttStartTime" type="time" class="form-control" required></div>
+          <div class="col-md-2"><label class="form-label" for="ttEndTime">End</label><input id="ttEndTime" type="time" class="form-control" required></div>
+          <div class="col-md-2"><label class="form-label" for="ttRoomLabel">Room</label><input id="ttRoomLabel" class="form-control" placeholder="Room 12"></div>
+          <div class="col-12"><button class="btn btn-primary" type="submit">Add timetable entry</button></div>
+        </form>
+      </section>
+      <section class="admin-section">
+        <div class="section-heading mb-3">
+          <div>
+            <p class="eyebrow mb-1">Weekly Entries</p>
+            <h2 class="h4 mb-0">Timetable list</h2>
+          </div>
+        </div>
+        <div class="table-card">
+          <div class="table-responsive">
+            <table class="table align-middle mb-0">
+              <thead><tr><th>Class</th><th>Day</th><th>Period</th><th>Time</th><th>Subject</th><th>Teacher</th><th>Room</th><th>Actions</th></tr></thead>
+              <tbody id="adminTimetableTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="/js/dashboard.js"></script>
+    <script src="/js/admin-timetable.js"></script>
+  </body>
+</html>
